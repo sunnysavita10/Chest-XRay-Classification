@@ -1,5 +1,7 @@
 from setuptools import find_packages,setup
+from typing import List
 
+HYPEN_E_DOT='-e .'
 
 def get_requirements(file_path:str)->List[str]:
     requirements=[]
@@ -19,7 +21,7 @@ name="Xray",
 version="0.0.1",
 author="sunny savita",
 author_email="sunny.savita@ineuron.ai",
-install_requires=get_requirements(),
+install_requires=get_requirements(r"C:\\Users\\sunny\\deeplearningproject\\requirements_dev.txt"),
 package=find_packages()
 
 )
