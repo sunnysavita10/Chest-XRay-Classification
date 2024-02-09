@@ -1,4 +1,4 @@
-bentoml==1.0.10
+bentoml==1.0.25
 joblib==1.2.0
 pip-chill==1.0.1
 torchvision==0.14.1
