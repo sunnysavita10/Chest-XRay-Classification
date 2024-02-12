@@ -49,15 +49,15 @@ class ModelEvaluation:
 
             cost: Module = CrossEntropyLoss()
 
-            optimizer: Optimizer = SGD(
+            '''optimizer: Optimizer = SGD(
                 model.parameters(), **self.model_evaluation_config.optimizer_params
-            )
+            )'''
 
             model.eval()
 
             logging.info("Exited the configuration method of Model evaluation class")
 
-            return test_dataloader, model, cost, optimizer
+            return test_dataloader, model, cost
 
         except Exception as e:
             raise XRayException(e, sys)
@@ -66,7 +66,7 @@ class ModelEvaluation:
         logging.info("Entered the test_net method of Model evaluation class")
 
         try:
-            test_dataloader, net, cost, _ = self.configuration()
+            test_dataloader, net, cost = self.configuration()
 
             with torch.no_grad():
                 holder = []

@@ -1,0 +1,15 @@
+service: "Xray.ml.model.model_service:svc"
+labels:
+    owner: ineuron-team
+    stage: dev
+include:
+    - "Xray/ml/model/model_service.py"
+    - "Xray/constant/training_pipeline/__init__.py"
+python:
+    packages:
+        - torch
+        - torchvision
+        - Pillow
+        - numpy
+    extra_index_url:
+        - "https://download.pytorch.org/whl/cpu"

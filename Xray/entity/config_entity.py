@@ -102,3 +102,15 @@ class ModelEvaluationConfig:
         self.total_batch: int = 0
 
         self.optimizer_params: dict = {"lr": 0.01, "momentum": 0.8}
+
+# Model Pusher Configurations
+@dataclass
+class ModelPusherConfig:
+    def __init__(self):
+        self.bentoml_model_name: str = BENTOML_MODEL_NAME
+
+        self.bentoml_service_name: str = BENTOML_SERVICE_NAME
+
+        self.train_transforms_key: str = TRAIN_TRANSFORMS_KEY
+
+        self.bentoml_ecr_image: str = BENTOML_ECR_URI
